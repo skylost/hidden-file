@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/games/fortune -s -n 50 |head -n1
