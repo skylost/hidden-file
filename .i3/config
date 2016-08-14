@@ -119,8 +119,26 @@ bindsym $mod+Ctrl+Delete exec i3lock --color=000000
 bindsym Pause exec i3lock --color=000000
 exec xautolock -time 3 -locker 'i3lock --color=000000'
 
+# Amixer configuration
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume  exec amixer -q sset Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q sset Master toggle
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # xrandr configuration
 exec_always xrandr --output HDMI3 --pos 1920x0 --mode 1920x1080 --rate 60.00 --output HDMI1 --mode 1920x1080 --rate 60.00 --left-of HDMI3
+
+# Startup application
+exec google-chrome
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
