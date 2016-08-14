@@ -9,6 +9,9 @@
 !.ansible/ansible.cfg
 !.i3/
 !.i3/config
+!.i3blocks/
+!.i3blocks/*
+!.i3blocks.conf
 !.zshrc
 !.zsh/
 !.zsh/*
