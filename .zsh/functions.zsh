@@ -10,6 +10,10 @@ nt() {
   netstat -laputen
 }
 
+docker-ip() {
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
+
 vi() {
   if [ -w $1 ]; then
     command vim $*
