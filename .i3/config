@@ -117,7 +117,7 @@ bindsym $mod+Shift+agrave move container to workspace 10
 bindsym $mod+Ctrl+l exec i3lock --color=000000
 bindsym $mod+Ctrl+Delete exec i3lock --color=000000
 bindsym Pause exec i3lock --color=000000
-exec xautolock -time 3 -locker 'i3lock --color=000000'
+exec xautolock -time 1 -locker 'i3lock --color=000000'
 
 # Amixer configuration
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
@@ -134,11 +134,16 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# xrandr configuration
-exec_always xrandr --output HDMI3 --pos 1920x0 --mode 1920x1080 --rate 60.00 --output HDMI1 --mode 1920x1080 --rate 60.00 --left-of HDMI3
+# scrot
+bindsym Print exec scrot -u $HOME/Images/screens/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+Print exec scrot $HOME/Images/screens/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+Shift+Print exec scrot -s $HOME/Images/screens/`date +%Y-%m-%d_%H:%M:%S`.png
 
-# Startup application
-exec google-chrome
+# xrandr configuration
+exec_always ~/.i3/xrandr.sh
+
+# chrome
+bindsym $mod+g exec google-chrome
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

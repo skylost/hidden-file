@@ -2,10 +2,6 @@
 
 # loading
 zstyle :compinstall filename '~/.zshrc'
-#autoload -Uz compinit #doesn't work on old zsh (redhat..)
-# Use modern completion system
-[ -e /etc/redhat-release ] && autoload -U compinit || autoload -Uz compinit
-compinit
 
 # some options
 setopt correct
